@@ -41,12 +41,13 @@ clf = clf.fit(train_x, train_y)
 
 
 
-
-
-
+#The file name of each test file
 test_filenames = []
+
+#The sampFreq and rms_val of each test file
 test_x = []
 
+#Go through each of the test files and calculate and store its sampFreq and rms.
 for filename in os.listdir("/Users/Alby/Desktop/yahoo_challenge/test_data"):
 	sampFreq_test, values_test = scipy.io.wavfile.read("/Users/Alby/Desktop/yahoo_challenge/test_data/" + filename)
 	values_test = values_test / (2.**15)
